@@ -1,349 +1,379 @@
 import HIPMLListener from './HIPMLListener.js';
 
 export default class HtmlHIPMLListener extends HIPMLListener {
+
   constructor(res) {
     super();
     this.res = res;
   }
 
-  // Enter a parse tree produced by HIPMLParser#policy.
-  enterPolicy(ctx) {
-    this.res.write('<h1>Policy</h1>');
-  }
-
-  // Exit a parse tree produced by HIPMLParser#policy.
-  exitPolicy(ctx) {
-    this.res.write('<hr/>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#policySection.
-  enterPolicySection(ctx) {
-    this.res.write(`<h2>${ctx.getText()}</h2>`);
-  }
-
-  // Exit a parse tree produced by HIPMLParser#policySection.
-  exitPolicySection(ctx) {
-    this.res.write('<hr/>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#attributesSection.
-  enterAttributesSection(ctx) {
-    this.res.write(`<h3>${ctx.getText()}</h3>`);
-  }
-
-  // Exit a parse tree produced by HIPMLParser#attributesSection.
-  exitAttributesSection(ctx) {
-    this.res.write('<hr/>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#attributesBody.
-  enterAttributesBody(ctx) {
-    this.res.write('<ul>');
-  }
-
-  // Exit a parse tree produced by HIPMLParser#attributesBody.
-  exitAttributesBody(ctx) {
-    this.res.write('</ul>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#attribute.
-  enterAttribute(ctx) {
-    this.res.write(`<li>${ctx.getText()}</li>`);
-  }
-
-  // Exit a parse tree produced by HIPMLParser#attribute.
-  exitAttribute(ctx) {
-    this.res.write('<hr/>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#attributeString.
-  enterAttributeString(ctx) {
-    this.res.write(`<li>${ctx.getText()}</li>`);
-  }
-
-  // Exit a parse tree produced by HIPMLParser#attributeString.
-  exitAttributeString(ctx) {
-    this.res.write('<hr/>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#attributeDate.
-  enterAttributeDate(ctx) {
-    this.res.write(`<li>${ctx.getText()}</li>`);
-  }
-
-  // Exit a parse tree produced by HIPMLParser#attributeDate.
-  exitAttributeDate(ctx) {
-    this.res.write('<hr/>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#attributeNumber.
-  enterAttributeNumber(ctx) {
-    this.res.write(`<li>${ctx.getText()}</li>`);
-  }
-
-  // Exit a parse tree produced by HIPMLParser#attributeNumber.
-  exitAttributeNumber(ctx) {
-    this.res.write('<hr/>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#attributeAmount.
-  enterAttributeAmount(ctx) {
-    this.res.write(`<li>HELLO ${ctx.getText()}</li>`);
-  }
-
-  // Exit a parse tree produced by HIPMLParser#attributeAmount.
-  exitAttributeAmount(ctx) {
-    this.res.write('<hr/>');
-    this.res.write(`<li>HELLO ${ctx.getText()}</li>`)
-  }
-
-  // Enter a parse tree produced by HIPMLParser#attributePercentage.
-  enterAttributePercentage(ctx) {
-    this.res.write(`<li>${ctx.getText()}</li>`);
-  }
-
-  // Exit a parse tree produced by HIPMLParser#attributePercentage.
-  exitAttributePercentage(ctx) {
-    this.res.write('<hr/>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#coverageSection.
-  enterCoverageSection(ctx) {
-    this.res.write(`<h3>${ctx.getText()}</h3>`);
-  }
-
-  // Exit a parse tree produced by HIPMLParser#coverageSection.
-  exitCoverageSection(ctx) {
-    this.res.write('<hr/>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#coverageBody.
-  enterCoverageBody(ctx) {
-    this.res.write('<ul>');
-  }
-
-  // Exit a parse tree produced by HIPMLParser#coverageBody.
-  exitCoverageBody(ctx) {
-    this.res.write('</ul>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#coverage.
-  enterCoverage(ctx) {
-    this.res.write(`<li>${ctx.getText()}</li>`);
-  }
-
-  // Exit a parse tree produced by HIPMLParser#coverage.
-  exitCoverage(ctx) {
-    this.res.write('<hr/>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#coverageString.
-  enterCoverageString(ctx) {
-    this.res.write(`<li>${ctx.getText()}</li>`);
-  }
-
-  // Exit a parse tree produced by HIPMLParser#coverageString.
-  exitCoverageString(ctx) {
-    this.res.write('<hr/>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#coverageDate.
-  enterCoverageDate(ctx) {
-    this.res.write(`<li>${ctx.getText()}</li>`);
-  }
-
-  // Exit a parse tree produced by HIPMLParser#coverageDate.
-  exitCoverageDate(ctx) {
-    this.res.write('<hr/>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#coverageNumber.
-  enterCoverageNumber(ctx) {
-    this.res.write(`<li>${ctx.getText()}</li>`);
-  }
-
-  // Exit a parse tree produced by HIPMLParser#coverageNumber.
-  exitCoverageNumber(ctx) {
-    this.res.write('<hr/>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#coverageAmount.
-  enterCoverageAmount(ctx) {
-    this.res.write(`<li>${ctx.getText()}</li>`);
-  }
-
-  // Exit a parse tree produced by HIPMLParser#coverageAmount.
-  exitCoverageAmount(ctx) {
-    this.res.write('<hr/>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#coveragePercentage.
-  enterCoveragePercentage(ctx) {
-    this.res.write(`<li>${ctx.getText()}</li>`);
-  }
-
-  // Exit a parse tree produced by HIPMLParser#coveragePercentage.
-  exitCoveragePercentage(ctx) {
-    this.res.write('<hr/>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#exclusionsSection.
-  enterExclusionsSection(ctx) {
-    this.res.write(`<h3>${ctx.getText()}</h3>`);
-  }
-
-  // Exit a parse tree produced by HIPMLParser#exclusionsSection.
-  exitExclusionsSection(ctx) {
-    this.res.write('<hr/>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#exclusionsBody.
-  enterExclusionsBody(ctx) {
-    this.res.write('<ul>');
-  }
-
-  // Exit a parse tree produced by HIPMLParser#exclusionsBody.
-  exitExclusionsBody(ctx) {
-    this.res.write('</ul>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#exclusion.
-  enterExclusion(ctx) {
-    this.res.write(`<li>${ctx.getText()}</li>`);
-  }
-
-  // Exit a parse tree produced by HIPMLParser#exclusion.
-  exitExclusion(ctx) {
-    this.res.write('<hr/>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#exclusionString.
-  enterExclusionString(ctx) {
-    this.res.write(`<li>${ctx.getText()}</li>`);
-  }
-
-  // Exit a parse tree produced by HIPMLParser#exclusionString.
-  exitExclusionString(ctx) {
-    this.res.write('<hr/>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#exclusionDate.
-  enterExclusionDate(ctx) {
-    this.res.write(`<li>${ctx.getText()}</li>`);
-  }
-
-  // Exit a parse tree produced by HIPMLParser#exclusionDate.
-  exitExclusionDate(ctx) {
-    this.res.write('<hr/>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#exclusionNumber.
-  enterExclusionNumber(ctx) {
-    this.res.write(`<li>${ctx.getText()}</li>`);
-  }
-
-  // Exit a parse tree produced by HIPMLParser#exclusionNumber.
-  exitExclusionNumber(ctx) {
-    this.res.write('<hr/>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#exclusionAmount.
-  enterExclusionAmount(ctx) {
-    this.res.write(`<li>${ctx.getText()}</li>`);
-  }
-
-  // Exit a parse tree produced by HIPMLParser#exclusionAmount.
-  exitExclusionAmount(ctx) {
-    this.res.write('<hr/>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#exclusionPercentage.
-  enterExclusionPercentage(ctx) {
-    this.res.write(`<li>${ctx.getText()}</li>`);
-  }
-
-  // Exit a parse tree produced by HIPMLParser#exclusionPercentage.
-  exitExclusionPercentage(ctx) {
-    this.res.write('<hr/>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#limitationsSection.
-  enterLimitationsSection(ctx) {
-    this.res.write(`<h3>${ctx.getText()}</h3>`);
-  }
-
-  // Exit a parse tree produced by HIPMLParser#limitationsSection.
-  exitLimitationsSection(ctx) {
-    this.res.write('<hr/>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#limitationsBody.
-  enterLimitationsBody(ctx) {
-    this.res.write('<ul>');
-  }
-
-  // Exit a parse tree produced by HIPMLParser#limitationsBody.
-  exitLimitationsBody(ctx) {
-    this.res.write('</ul>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#limitation.
-  enterLimitation(ctx) {
-    this.res.write(`<li>${ctx.getText()}</li>`);
-  }
-
-  // Exit a parse tree produced by HIPMLParser#limitation.
-  exitLimitation(ctx) {
-    this.res.write('<hr/>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#limitationString.
-  enterLimitationString(ctx) {
-    this.res.write(`<li>${ctx.getText()}</li>`);
-  }
-
-  // Exit a parse tree produced by HIPMLParser#limitationString.
-  exitLimitationString(ctx) {
-    this.res.write('<hr/>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#limitationDate.
-  enterLimitationDate(ctx) {
-    this.res.write(`<li>${ctx.getText()}</li>`);
-  }
-
-  // Exit a parse tree produced by HIPMLParser#limitationDate.
-  exitLimitationDate(ctx) {
-    this.res.write('<hr/>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#limitationNumber.
-  enterLimitationNumber(ctx) {
-    this.res.write(`<li>${ctx.getText()}</li>`);
-  }
-
-  // Exit a parse tree produced by HIPMLParser#limitationNumber.
-  exitLimitationNumber(ctx) {
-    this.res.write('<hr/>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#limitationAmount.
-  enterLimitationAmount(ctx) {
-    this.res.write(`<li>${ctx.getText()}</li>`);
-  }
-
-  // Exit a parse tree produced by HIPMLParser#limitationAmount.
-  exitLimitationAmount(ctx) {
-    this.res.write('<hr/>');
-  }
-
-  // Enter a parse tree produced by HIPMLParser#limitationPercentage.
-  enterLimitationPercentage(ctx) {
-    this.res.write(`<li>${ctx.getText()}</li>`);
-  }
-
-  // Exit a parse tree produced by HIPMLParser#limitationPercentage.
-  exitLimitationPercentage(ctx) {
-    this.res.write('<hr/>');
-  }
+	// Enter a parse tree produced by HIPMLParser#policy.
+	enterPolicy(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#policy.
+	exitPolicy(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#policySection.
+	enterPolicySection(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#policySection.
+	exitPolicySection(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#attributesSection.
+	enterAttributesSection(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#attributesSection.
+	exitAttributesSection(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#attributesBody.
+	enterAttributesBody(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#attributesBody.
+	exitAttributesBody(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#attribute.
+	enterAttribute(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#attribute.
+	exitAttribute(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#attributeString.
+	enterAttributeString(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#attributeString.
+	exitAttributeString(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#attributeDate.
+	enterAttributeDate(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#attributeDate.
+	exitAttributeDate(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#attributeNumber.
+	enterAttributeNumber(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#attributeNumber.
+	exitAttributeNumber(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#coverageSection.
+	enterCoverageSection(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#coverageSection.
+	exitCoverageSection(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#coverageBody.
+	enterCoverageBody(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#coverageBody.
+	exitCoverageBody(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#coverageItem.
+	enterCoverageItem(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#coverageItem.
+	exitCoverageItem(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#coverageItemName.
+	enterCoverageItemName(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#coverageItemName.
+	exitCoverageItemName(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#coverageItemDetails.
+	enterCoverageItemDetails(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#coverageItemDetails.
+	exitCoverageItemDetails(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#coverageItemLimit.
+	enterCoverageItemLimit(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#coverageItemLimit.
+	exitCoverageItemLimit(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#coverageItemCondition.
+	enterCoverageItemCondition(ctx) {
+    console.log("\nITEM CONDITION\n", ctx.getText());
+	}
+
+	// Exit a parse tree produced by HIPMLParser#coverageItemCondition.
+	exitCoverageItemCondition(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#exclusionsSection.
+	enterExclusionsSection(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#exclusionsSection.
+	exitExclusionsSection(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#exclusionBody.
+	enterExclusionBody(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#exclusionBody.
+	exitExclusionBody(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#exclusionItem.
+	enterExclusionItem(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#exclusionItem.
+	exitExclusionItem(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#exclusionItemCondition.
+	enterExclusionItemCondition(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#exclusionItemCondition.
+	exitExclusionItemCondition(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#switchStmt.
+	enterSwitchStmt(ctx) {
+    console.log("\nSWITCH STATEMENT\n", ctx.getText());
+	}
+
+	// Exit a parse tree produced by HIPMLParser#switchStmt.
+	exitSwitchStmt(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#switchExpr.
+	enterSwitchExpr(ctx) {
+    console.log("\nSWITCH EXPR\n", ctx.getText());
+	}
+
+	// Exit a parse tree produced by HIPMLParser#switchExpr.
+	exitSwitchExpr(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#switchDefaultExpr.
+	enterSwitchDefaultExpr(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#switchDefaultExpr.
+	exitSwitchDefaultExpr(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#booleanExpr.
+	enterBooleanExpr(ctx) {
+    console.log("\nBOOLEAN EXPR\n", ctx.getText());
+	}
+
+	// Exit a parse tree produced by HIPMLParser#booleanExpr.
+	exitBooleanExpr(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#booleanGroupExprStmt.
+	enterBooleanGroupExprStmt(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#booleanGroupExprStmt.
+	exitBooleanGroupExprStmt(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#comparatorExpr.
+	enterComparatorExpr(ctx) {
+    console.log("\nCOMPARATOR EXPR\n", ctx.getText());
+	}
+
+	// Exit a parse tree produced by HIPMLParser#comparatorExpr.
+	exitComparatorExpr(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#groupFnExpr.
+	enterGroupFnExpr(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#groupFnExpr.
+	exitGroupFnExpr(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#numberExpr.
+	enterNumberExpr(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#numberExpr.
+	exitNumberExpr(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#listOpExpr.
+	enterListOpExpr(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#listOpExpr.
+	exitListOpExpr(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#list.
+	enterList(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#list.
+	exitList(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#listExpr.
+	enterListExpr(ctx) {
+    console.log("\nenterListExpr\n", ctx.getText());
+	}
+
+	// Exit a parse tree produced by HIPMLParser#listExpr.
+	exitListExpr(ctx) {
+
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#dateExpr.
+	enterDateExpr(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#dateExpr.
+	exitDateExpr(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#variable.
+	enterVariable(ctx) {
+    console.log("\nVARIABLE\n", ctx.getText());
+	}
+
+	// Exit a parse tree produced by HIPMLParser#variable.
+	exitVariable(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#diagnosis.
+	enterDiagnosis(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#diagnosis.
+	exitDiagnosis(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#procedure.
+	enterProcedure(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#procedure.
+	exitProcedure(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#service.
+	enterService(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#service.
+	exitService(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#amount.
+	enterAmount(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#amount.
+	exitAmount(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#date.
+	enterDate(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#date.
+	exitDate(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#number.
+	enterNumber(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#number.
+	exitNumber(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#string.
+	enterString(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#string.
+	exitString(ctx) {
+	}
+
+
+	// Enter a parse tree produced by HIPMLParser#bool.
+	enterBool(ctx) {
+	}
+
+	// Exit a parse tree produced by HIPMLParser#bool.
+	exitBool(ctx) {
+	}
+
+
+
 }

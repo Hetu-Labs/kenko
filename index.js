@@ -35,21 +35,48 @@ server.listen(PORT, () => {
 
 const getInput  = () => {
 return `
+// Policy Template
 Policy Attributes:
-  Sum Assured: Amt(10,00,000)
-  Copay %: 5
+  Name: "ABC Gold Health Policy"
+  Issuer: "ABC Insurance Corporation"
+  UIN: "ABC123DEF456"
+  Type: "Medical"
+  Category: "Group"
+  URL: "https://www.abchealth.com/policy/abcGoldHealthPolicy.html"
+  Version: "1.0.0"
+  Approval Date: 2019-01-01
+  Effective Date: 2019-02-01
+  Expiration Date: 2024-12-31
+  Sum Assured: One of the following:
+  - Amt(1,00,000) if Var(Employee Designation) is "Staff" and Var(Enhancement Type) is "50%"
+  - Amt(2,00,000) if Var(Employee Designation) is "Associate"
+  - Amt(2,00,000) if Var(Employee Designation) is "Director"
+  - Amt(50,000) default
+  Copay %: 10
+
 Coverage:
-  Prc(Angioplasty)
-  Prc(CABG)
-  Prc(Cataract)
-  Dgn(Heart arrhythmia)
-  Dgn(Diabetes mellitus)
-  Svc(Room rent for attendants)
+  Prc(CABG):
+    Limit per policy period: Amt(1,00,000)
+  Dgn(Heart diseases), Prc(Cancer Treatments):
+    Limit per person: whichever is lower of 2% of Var(Sum Assured) and Amt(5,00,000)
+  Prc(Cataract):
+    Limit per claim: One of the following:
+      - Amt(35,000) if all of the following are true:
+        - Var(Employee Designation) is "Staff"
+        - Var(Enhancement Type) is "50%"
+      - Amt(40,000) if Var(Employee Designation) is "Asociate"
+        and Var(Enhancement Type) is "100%"
+      - Amt(50,000) if Var(Employee Designation) is "Director"
+      - 5 % of Var(Sum Assured) default
+    Included only if:
+      number of months between Var(Policy Start Date) and Var(Hospitalization Date) is greater than 36
+      and Var(Pre-existing Conditions) does not contain Dgn(Diabetes)
+
 Exclusions:
-  Prc(Cosmetic Surgeries)
-  Prc(Dental treatments)
   Dgn(Ebola)
-  Svc(Laundry charges)
+  Svc(Room rent for attendants)
+  Prc(Minimally invasive CABG):
+    Excluded unless: Var(Employee Designation) is "Director"
 `;
 };
 
